@@ -21,11 +21,13 @@ galleryRootEl.addEventListener("click", onClickGallery);
 
 function onClickGallery(event) {
   event.preventDefault();
-
   if (event.target.nodeName === "IMG") {
-    console.log("click");
-
-    console.log("click2");
+    // console.log("click");
+    let gallery = new SimpleLightbox(".gallery a", {
+      captionsData: "alt",
+      captionPosition: "bottom",
+      captionDelay: 250,
+    });
 
     gallery.on("show.simplelightbox", function () {
       console.log("this event fires before the lightbox opens");
